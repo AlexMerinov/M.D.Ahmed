@@ -1,0 +1,447 @@
+
+.operation {
+   &__block {
+      margin-bottom: 64px;
+
+      @media screen and (max-width:768px) {
+         margin-bottom: 30px;
+      }
+   }
+   &__list {
+      &--mb30 {
+         margin-bottom: 30px;
+      }
+   }
+   &__item {
+      padding: 34px 40px;
+      border-radius: 5px;
+      flex: 1 1 auto;
+      &--left {
+         background-color: $primary;
+         .text {
+            color: #fff;
+         }
+
+         @media screen and (max-width:1364px) {
+            margin-bottom: 20px;
+         }
+
+         @media screen and (max-width:768px) {
+            margin-bottom: 10px;
+         }
+      }
+      &--right {
+         background-color: $bg;
+      }
+
+      @media screen and (max-width:768px) {
+         padding: 27px 20px;
+      }
+   }
+
+   &__result {
+      padding: 40px 0;
+   }
+}
+
+.operation__item > h5 {
+   font-weight: 400;
+   font-size: 24px;
+   color: $title;
+   margin-bottom: 20px;
+
+   @media screen and (max-width:768px) {
+      font-size: 18px;
+   }
+}
+
+.operation__item > ul {
+   padding-left: 19px;
+}
+
+.operation__item > *+* {
+   margin-top: 30px;
+}
+
+.operation__item > ul > li {
+   position: relative;
+   margin-bottom: 6px;
+
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 1.5;
+   color: $text;
+
+   &::before {
+      display: block;
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $primary;
+      position: absolute;
+      top: 10px;
+      left: -19px;
+      @media screen and (max-width:768px) {
+         left: -15px;
+      }
+   }
+
+   @media screen and (max-width: 768px) {
+      font-size: 14px;
+   }
+}
+
+.card-operation {
+   display: flex;
+   align-items: flex-start;
+   &--visible {
+      .card-operation__btn {
+         &:after {
+            transform: rotate(180deg);
+         }
+      }
+   }
+   &__picture {
+      flex: 0 0 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+
+      @media screen and (max-width:1364px) {
+         display: none;
+      }
+   }
+
+   &__btn {
+      width: 100%;
+      padding: 27px 0;
+      text-align: left;
+      cursor: auto;
+      position: relative;
+      border-bottom: 1px solid rgba(38, 57, 75, 0.1);
+      &::after {
+         display: none;
+         content: '';
+         width: 18px;
+         height: 9px;
+         background: url(../../images/arrow-accord.svg) center / cover no-repeat;
+
+         position: absolute;
+         right: 0;
+         top: 50%;
+         margin-top: -4.5px;
+         transition: all 0.2s;
+
+         @media screen and (max-width: 1364px) {
+            display: block;
+         }
+
+         @media screen and (max-width: 768px) {
+            width: 12px;
+            height: 6px;
+         }
+      }
+
+      @media screen and (max-width:1364px) {
+         border: none;
+         cursor: pointer;
+      }
+
+      @media screen and (max-width:768px) {
+         padding: 17px 0;
+      }
+   }
+
+   &__desc {
+      .text {
+         padding-top: 30px;
+         padding-bottom: 30px;
+         @media screen and (max-width: 1364px) {
+            padding-top: 0;
+         }
+      }     
+
+      @media screen and (max-width:1364px) {
+         overflow: hidden;
+         max-height: 0;
+         transition: 0.3s;
+      }
+   }
+
+   .subtitle {
+      &__none {
+         @media screen and (max-width: 1364px) {
+            display: none;
+         }
+      }
+
+      @media screen and (max-width: 768px) {
+         font-size: 18px;
+      }
+   }
+
+   &__checkup {
+      display: grid;
+      row-gap: 15px;
+      column-gap: 20px;
+      grid-template-columns: minmax(min-content, 652px) minmax(min-content, 540px);
+      grid-template-rows: 1fr 1fr;
+      margin-bottom: 64px;
+
+      @media screen and (max-width:1540px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(4, 125px);
+      }
+
+      
+      @media screen and (max-width:768px) {
+         grid-template-columns: 1fr;
+         grid-template-rows: 203px 203px 265px;
+      }
+   }
+
+   @media screen and (max-width:1364px) {
+      border-bottom: 1px solid rgba(38,57,75,.1);
+
+      &:nth-child(1) {
+         border-top: 1px solid rgba(38,57,75,.1);
+      }
+
+      &:nth-last-of-type(1) {
+         margin-bottom: 50px;
+      }
+   }
+}
+
+.card-check {
+   display: flex;
+   align-items: center;
+   position: relative;
+   padding: 35px 35px 26px 25px;
+   border-radius: 5px;
+   overflow: hidden;
+   font-weight: 400;
+   font-size: 18px;
+   color: $text;
+   background-color: $bg;
+   &:nth-child(1) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+   }
+   &:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+
+   }
+   &::after {
+      content: '';
+      width: 184px;
+      height: 170.37px;
+      border-radius: 100%;
+      background-color: #C5F1EF;
+      position: absolute;
+      top: 18.5px;
+      right: -22px;
+
+      @media screen and (max-width:768px) {
+         top: 100px;
+      }
+   }
+
+   &__wrapper {
+      display: flex;
+      align-items: center;
+   }
+
+   .text {
+      color: #fff;
+   }
+
+
+   &--big {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $primary;
+      color: #fff;
+      .card-check {
+         &__numb {
+            color: #fff;
+            margin-right: 0;
+            margin-bottom: 17px;
+
+            @media screen and (max-width:768px) {
+               margin-bottom: 0;
+               margin-right: 10px;
+            }
+         } 
+         &__info {
+            max-width: 315px;
+         }
+         &__name {
+            color: #fff;
+            margin-bottom: 10px;
+         }
+      }
+      &::after {
+         width: 273px;
+         height: 273px;
+         top: -67px;
+         background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      @media screen and (max-width:1540px) {
+         grid-column: 1 / 2;
+         grid-row: 3 / 5;
+      }
+
+      @media screen and (max-width:768px) {
+         grid-row: 3 / 4;
+         flex-direction: row;
+
+         img {
+            max-width: 169px;
+         }
+
+         &::after {
+            width: 187px;
+            height: 169px;
+            right: -50px;
+            top: 140px;
+         }
+      }
+   }
+
+   &__numb {
+      display: block;
+      font-weight: 500;
+      font-size: 53px;
+      color: $primary;
+      margin-right: 23px;
+
+      @media screen and (max-width:768px) {
+         margin-right: 8px;
+         font-size: 46px;
+      }
+   }
+
+   &__name {
+      display: block;
+      font-weight: 400;
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: $title;
+
+      @media screen and (max-width:768px) {
+         font-size: 18px;
+      }
+   }
+
+   img {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+
+      @media screen and (max-width:768px) {
+         top: inherit;
+         bottom: 0;
+      }
+   }
+
+   @media screen and (max-width:768px) {
+      padding: 24px 20px;
+      align-items: start;
+      font-size: 14px;
+   }
+}
+
+.result {
+   background-color: $form;
+   &__desc {
+      height: 100%;
+      padding: 35px 40px;
+      background-color: #fff;
+      border-radius: 5px;
+
+      .btn {
+         min-width: 295px;
+      }
+
+      @media screen and (max-width: 1364px) {
+         margin-bottom: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+         padding: 30px 20px;
+
+         .btn {
+            min-width: 100%;
+         }
+      }
+   }
+
+   &__time {
+      flex: 1 1 auto;
+      padding: 40px;
+      padding-bottom: 24px;
+      gap: 20px;
+
+      background-color: #fff;
+      border-radius: 5px;
+
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (max-width: 768px) {
+         flex-direction: column;
+         padding: 30px 20px;
+      }
+   }
+
+   .time {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
+      max-width: 164px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.5;
+      color: $text;
+      &__title {
+         display: block;
+         font-weight: 400;
+         font-size: 32px;
+         line-height: 106%;
+         color: $title;
+         margin-bottom: 18px;
+
+         @media screen and (max-width:768px) {
+            font-size: 18px;
+            margin-bottom: 10px;
+         }
+      }
+      @media screen and (max-width:1364px) {
+         flex-direction: row;
+         align-items: center;
+         max-width: 300px;
+      }
+
+      @media screen and (max-width:768px) {
+         &:nth-child(1) {
+            margin-bottom: 20px;
+            font-size: 14px;
+         }
+
+         img {
+            width: 70px;
+            height: 70px;
+         }
+      }
+   }
+}
+

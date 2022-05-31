@@ -1,0 +1,68 @@
+@@include('includes/header.html', { 'title' : 'New Project' })
+
+<div class="page">
+  <div class="page__box">
+    <!-- Header -->
+    <header class="page__header header">
+      <nav class="header__nav nav">
+        <div class="header__logo logo logo--dt">
+          <img src="images/Logo.png" alt="no-logo" />
+        </div>
+        <div class="header__logo logo logo--mob">
+          <img src="images/logo-mobile.png" alt="no-logo" />
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#about" class="nav__link">О докторе</a>
+          </li>
+          <li class="nav__item">
+            <a href="#operation-1st" class="nav__link">Циркумцизио</a>
+          </li>
+          <li class="nav__item">
+            <a href="#operation-2nd" class="nav__link">Операция Бергмана</a>
+          </li>
+          <li class="nav__item">
+            <a href="#operation-3rd" class="nav__link">Операция Мармара</a>
+          </li>
+          <li class="nav__item">
+            <a href="#footer" class="nav__link">Контакты</a>
+          </li>
+        </ul>
+        <div class="nav__contact phone">
+          <a href="tel:+74957840035" class="phone__link">
+            <svg class="icon">
+              <use xlink:href="svg-sprite/svg-sprite.svg#phone"></use>
+            </svg>
+            <span>+7 (495) 784-00-35</span>
+          </a>
+          <button class="btn btn--p12" data-open-popup="popup">
+            Записаться
+          </button>
+          <button class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- / Header -->
+
+    <!-- Main -->
+    <main class="page__tnx tnx">
+      <div class="tnx__container container">
+        <div class="tnx__icon">
+          <img src="images/request.svg" alt="no-image" />
+        </div>
+        <h1 class="tnx__title">Заявка принята</h1>
+        <p class="tnx__text">
+          В ближайшее время Вам перезвонит менеджер для уточнения деталей.
+        </p>
+        <button class="btn btn--p12">Вернуться на сайт</button>
+      </div>
+    </main>
+    <!-- / Main -->
+  </div>
+</div>
+
+@@include('includes/footer.html')

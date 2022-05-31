@@ -1,0 +1,108 @@
+.footer {
+   background-color: $title;
+   padding-top: 54px;
+
+   .contact {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 45px;
+      border-bottom: 1px solid #475766;
+      .column {
+         color: #fff;
+         &__header {
+            font-size: 14px;
+            margin-bottom: 14px;
+         }
+         &__link  {
+            color: inherit;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.5;
+            transition: color 0.2s ease-in-out;
+            &:hover {
+               color: $primary;
+            }
+         }
+         span {
+            color: #A8B0B7;
+            font-size: 13px;
+         }
+
+         @media screen and (max-width: 1364px) {
+            padding-bottom: 32px;
+
+            &:nth-child(2) {
+               order: 1;
+            }
+            &:nth-child(3) {
+               order: 1;
+            }
+         }
+
+         @media screen and (max-width: 768px) {
+            padding-bottom: 20px;
+            padding-top: 29px;
+            border-bottom: 1px solid #475766;
+            &:nth-child(1) {
+               padding-top: 0;
+            }
+            &:nth-child(2) {
+               order: 0;
+            }
+            &:nth-last-of-type(2) {
+               border-bottom: none;
+            }
+         }
+
+      }
+      @media screen and (max-width: 1364px) {
+         padding-bottom: 8px;
+      }
+   }
+
+   &__block {
+      padding-top: 25px;
+      padding-bottom: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #A8B0B7;
+
+      @media screen and (max-width:1364px) {
+         flex-direction: column;
+         align-items: flex-start;
+         padding-bottom: 20px;
+      }
+
+      .copyright {
+         @media screen and (max-width:1364px) {
+            margin-bottom: 7px;
+         }
+      }
+   }
+
+   &__logo {
+      margin-left: 15px;
+   }
+
+   .developer {
+      display: flex;
+      align-items: center;
+   }
+
+   .icon {
+      width: 112px;
+      height: 24px;
+      fill: #fff;
+      color: #E55030;
+      transition: all 0.2s ease-out;
+      &:hover {
+         fill: $primary;
+         color: #fff;
+      }
+   }
+
+}
