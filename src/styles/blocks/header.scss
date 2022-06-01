@@ -135,6 +135,11 @@
 
       &:hover {
          padding-left: 25px;
+         .nav {
+            &__link {
+               font-weight: 500;
+            }
+         }
 
          &::before {
             width: 14px;
@@ -144,6 +149,12 @@
 
       &--active {
          padding-left: 25px;
+         .nav {
+            &__link {
+               font-weight: 500;
+            }
+         }   
+         
 
          &::before {
             width: 14px;

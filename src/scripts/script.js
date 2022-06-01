@@ -155,12 +155,34 @@ if (anchors) {
          let currentDesc = e.target.nextElementSibling;
          currentCard.classList.toggle('card-operation--visible');
          if (currentCard.classList.contains('card-operation--visible')) {
-            currentDesc.style.maxHeight = currentDesc.scrollHeight + "px";
+            currentDesc.style.maxHeight = currentDesc.scrollHeight + "px";d
          } else {
             currentDesc.style.maxHeight = 0;
          }
       }
    }
+
+
+   const fixBlocks = document.querySelectorAll('.fix-block');
+
+   const disableScroll = function () {
+      let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+      document.body.classList.add('disable--scroll');
+      fixBlocks.forEach((el) => {
+         el.style.paddingRight = paddingOffset;
+      });
+      document.body.style.paddingRight = paddingOffset;
+   }
+
+   const enableScroll = function () {
+      document.body.classList.remove('disable--scroll');
+      fixBlocks.forEach((el) => {
+         el.style.paddingRight = '0px';
+      });
+      document.body.style.paddingRight = '0px';
+   }
+
+
 
   
   // Open Popup
@@ -169,6 +191,9 @@ if (anchors) {
    if (openPopupButtons) {
        openPopupButtons.forEach((openPopupButton) => {
            openPopupButton.addEventListener('click', (event) => {
+
+               disableScroll();
+
                event.preventDefault();
                const popupName = event.target.dataset.openPopup;
                const popups = document.querySelectorAll('.popup');
@@ -187,8 +212,9 @@ if (anchors) {
                }
            });
        });
-   }
 
+      
+   }
 
 
    // Close Popup After Button Click
@@ -197,6 +223,7 @@ if (anchors) {
    if (closePopupButtons) {
        closePopupButtons.forEach((closePopupButton) => {
            closePopupButton.addEventListener('click', (event) => {
+               enableScroll();
                event.preventDefault();
                closeAllPopups();
            });
@@ -210,8 +237,9 @@ if (anchors) {
        popups.forEach((popup) => {
            popup.addEventListener('mousedown', (event) => {
                if (!event.target.closest('.popup__window')) {
-                   event.preventDefault();
-                   closeAllPopups();
+                  enableScroll();
+                  event.preventDefault();
+                  closeAllPopups();
                }
            });
        });
@@ -221,8 +249,9 @@ if (anchors) {
 
    document.addEventListener('keydown', (event) => {
        if (event.key == 'Escape') {
-           event.preventDefault();
-           closeAllPopups();
+            enableScroll();
+            event.preventDefault();
+            closeAllPopups();
        }
    });
 
