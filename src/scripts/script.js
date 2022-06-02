@@ -50,24 +50,41 @@ const closeAllPopups = () => {
    const btnFixed = document.querySelector('.btn-fixed');
 
    if (btnFixed) {
-
       window.addEventListener('scroll', () => {
-         if (window.pageYOffset > 0 && btnFixed.getBoundingClientRect().y + btnFixed.offsetHeight < document.documentElement.clientHeight) {
-            btnFixed.classList.add('btn-fixed--active');
-         } else {
-            btnFixed.classList.remove('btn-fixed--active');
+         function animOnScroll() {
+            const btnFixedHeight = btnFixed.offsetHeight;
+            const btnFixedOffset = offset(btnFixed).top;
+            const animStart = 1.5;
+   
+            let btnFixedPoint = window.innerHeight - btnFixedHeight * animStart;
+   
+            if ((window.pageYOffset > btnFixedOffset - btnFixedPoint) && window.pageYOffset > 0  && window.pageYOffset < (btnFixedOffset + btnFixedHeight)) {
+               btnFixed.classList.add('btn-fixed--active');
+            } else {
+                  btnFixed.classList.remove('btn-fixed--active');
+            }
+         };
+       
+         function offset(el) {
+            const rect = el.getBoundingClientRect();
+               scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+               scrollTop  = window.pageYOffset || document.documentElement.scrollTop;
+            return {
+               top: rect.top + scrollTop, 
+               left: rect.left + scrollLeft
+            }
          }
+         animOnScroll();
       });
 
-      function offset(el) {
-         const rect = el.getBoundingClientRect();
-            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-            scrollTop  = window.pageYOffset || document.documentElement.scrollTop;
-         return {
-            top: rect.top + scrollTop, 
-            left: rect.left + scrollLeft
-         }
-      }
+      // window.addEventListener('scroll', () => {
+      //    if (window.pageYOffset > 0 && btnFixed.getBoundingClientRect().y + btnFixed.offsetHeight < document.documentElement.clientHeight) {
+      //       btnFixed.classList.add('btn-fixed--active');
+      //    } else {
+      //       btnFixed.classList.remove('btn-fixed--active');
+      //    }
+      // });
+
    };
 
 
@@ -254,4 +271,14 @@ if (anchors) {
             closeAllPopups();
        }
    });
+
+
+   // ----------------------------mask---------------------------------------
+
+
+let element = document.getElementById('phone');
+let maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+let mask = IMask(element, maskOptions);
 
