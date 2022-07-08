@@ -76,15 +76,6 @@ const closeAllPopups = () => {
          }
          animOnScroll();
       });
-
-      // window.addEventListener('scroll', () => {
-      //    if (window.pageYOffset > 0 && btnFixed.getBoundingClientRect().y + btnFixed.offsetHeight < document.documentElement.clientHeight) {
-      //       btnFixed.classList.add('btn-fixed--active');
-      //    } else {
-      //       btnFixed.classList.remove('btn-fixed--active');
-      //    }
-      // });
-
    };
 
 
@@ -172,7 +163,7 @@ if (anchors) {
          let currentDesc = e.target.nextElementSibling;
          currentCard.classList.toggle('card-operation--visible');
          if (currentCard.classList.contains('card-operation--visible')) {
-            currentDesc.style.maxHeight = currentDesc.scrollHeight + "px";d
+            currentDesc.style.maxHeight = currentDesc.scrollHeight + "px";
          } else {
             currentDesc.style.maxHeight = 0;
          }
